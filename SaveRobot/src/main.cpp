@@ -6,6 +6,7 @@ CConvAN MyClass;
 
 void setup() {
   // put your setup code here, to run once:
+<<<<<<< HEAD
   Serial.begin(9600);
   MyClass.InitCan8();
 }
@@ -93,3 +94,12 @@ void loop() {
   /**********************************************************************************************************************/
 
 
+=======
+  DDRB = B01000000;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:zefzefzef
+  PORTB = 00000000;
+}
+>>>>>>> 192bdebd137bc9b1d270417fae071e7d664ede67
