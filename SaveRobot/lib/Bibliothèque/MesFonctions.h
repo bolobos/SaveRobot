@@ -3,7 +3,6 @@
 #include <Arduino.h>
 //#include <GEIIutil.h>
 #include "Ultrasonic.h" // pour la gestion des capteurs à ultrasons
-#include "Grove_LED_Bar.h" // led sensor
 
 #define MSK_VERIF 0x20
 
@@ -37,7 +36,7 @@ class CConvAN{
 
         uint16_t ConvAN16(void);
 
-        void InitCan16(void);
+        void InitCan16(int x_int_adcport);
 
 
     private:
@@ -68,5 +67,9 @@ class LiaisonSerie{
      */
     void LiaisonSerie::ecritCar(char x_char_c);
 };
+
+
+  void ValideInterruptTOV1(void);
+ float MesureInt1(void);
 
 #endif

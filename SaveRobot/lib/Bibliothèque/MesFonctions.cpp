@@ -9,11 +9,11 @@ void CConvAN::InitCan8(){
   ADCSRB = 0x08; //  Analog Comparator Multiplexed Input -> config
 }
 
-void CConvAN::InitCan16(){
+void CConvAN::InitCan16(int x_int_adcport){
 
   //3 registres de configuration de l'entrée analogique
   ADCSRA = 0x84; // division facteur à 16, activer l'adc
-  ADMUX = 0x41; // ADC1, AVcc sur l'extérieur
+  ADMUX = x_int_adcport and (1 << 0x41); // ADC1, AVcc sur l'extérieur
   ADCSRB = 0x08; // Analog Comparator Multiplexed Input -> config
 }
 
@@ -53,3 +53,23 @@ void LiaisonSerie::ecritCar(char x_char_c){
   UDR1 = x_char_c;
 }
 */
+
+
+
+
+
+void ValideInterruptTOV1(void){
+  TCCR1B=B00000100;
+  TCNT1=3036;//fais l'interruption tout les 1 seconde
+  TIMSK1=B00000001;
+}
+
+
+float MesureInt1(void){
+  bool var = 0 ;
+  float result = 0;
+
+
+
+  return (result);
+}

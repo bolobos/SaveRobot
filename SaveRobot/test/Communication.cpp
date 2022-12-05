@@ -60,12 +60,9 @@ ISR(INT0_vect) //interruption canal 1
   }
   else {
     result = (float)TCNT1 - 3036;
-    result = result-69;
-    result = result*2/52;
-    // Ca va de 0 a 2 donc pour la partie droite on a juste a faire -1 puis fois la vitesse 
-    // pour l'autre on va faire 1-la valeur et fois la valeur 
-    // on divise en deux cas : Superieur a 1 ou inférieur a 1
-    result= 1-(result -1);
+    result = result * 0.016;
+
+
     EICRA = 0x03; //rising edge
     var = !var;
   }
