@@ -1,0 +1,6 @@
+[cRIO-9063]
+cRIO-9063 = "172.16.121.1"
+
+[Poste de travail]
+Poste de travail = "169.254.115.44"
+
